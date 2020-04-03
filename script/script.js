@@ -3,6 +3,8 @@
 
 $(document).ready(function(){
 
+  // asseggno all'array creato 15 numeri random che non si ripetono
+
   var myArray = [];
 
    for (var i = 0; i < 15; i++) {
@@ -15,6 +17,7 @@ $(document).ready(function(){
      }
    }
 
+   // creo 64 div con classo .quadrato nell'HTML
 
   for (var i = 0; i < 64; i++) {
     var contentPrec = $(".container").html();
@@ -23,22 +26,45 @@ $(document).ready(function(){
 
   }
 
-    while (myArray.length > 0){
+  // Faccio ciclo while per assegnare classi a indici random
 
-    var spliced = myArray.splice(0,1);
-    var numSplice = spliced[0];
+  while (myArray.length > 0){
+  var spliced = myArray.splice(0,1);
+  var numSplice = spliced[0];
+  $(".quadrato").eq(numSplice).addClass("color-red");
+  }
 
-    $(".quadrato").eq(numSplice).addClass("color-red");
+  // creo funzione al click
+  var punteggioRosso = 0;
+  var punteggioVerde = 0;
+  var cheatPoints = 0;
+
+  console.log(punteggioRosso);
+  console.log(punteggioVerde);
+  $(".quadrato").click(function(){
 
 
+    if ($(this).hasClass("already")){
+      cheatPoints++;
+      console.log(cheatPoints);
+    } else if ($(this).hasClass("color-red")){
+        $(this).css("background","red")
+        punteggioRosso++;
+        $(".prosso").html(punteggioRosso)
+        $(this).addClass("already");
+        console.log(punteggioRosso);
+    } else if (!$(this).hasClass("color-red")){
+      $(this).css("background","green")
+      punteggioVerde++;
+      $(".pverde").html(punteggioVerde);
+      $(this).addClass("already");
     }
 
-    $(".quadrato").click(function(){
-      $(this).css("background", "green")
-      if ($(this).hasClass("color-red")){
-        $(this).css("background","red")
-      }
-    })
+    // if (cheatPoints <= 10) {
+    //   cheatPoints.reload();
+    // }
+  })
+
 
 
 
