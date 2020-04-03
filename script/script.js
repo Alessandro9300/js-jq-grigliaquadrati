@@ -1,5 +1,6 @@
 // creo 64 div in js a random gli dico di crearne 15 col background rosso quando clicco mentre tutti gli altri tutti verdi
 
+// (ho messo più quadrati rossi sennò era troppo facile vincere)
 
 $(document).ready(function(){
 
@@ -7,7 +8,7 @@ $(document).ready(function(){
 
   var myArray = [];
 
-   for (var i = 0; i < 15; i++) {
+   for (var i = 0; i < 25; i++) {
      numeroRandom = Math.floor(Math.random() * (64) + 1);
 
      if (myArray.indexOf(numeroRandom) == -1){
@@ -20,8 +21,8 @@ $(document).ready(function(){
    // creo 64 div con classo .quadrato nell'HTML
 
   for (var i = 0; i < 64; i++) {
-    var contentPrec = $(".container").html();
-    var outHtml = $(".container");
+    var contentPrec = $(".cont-cub").html();
+    var outHtml = $(".cont-cub");
     outHtml.html(contentPrec + "<div class='quadrato'>" + "</div>");
 
   }
@@ -60,9 +61,18 @@ $(document).ready(function(){
       $(this).addClass("already");
     }
 
-    // if (cheatPoints <= 10) {
-    //   cheatPoints.reload();
-    // }
+    if (cheatPoints >= 4) {
+      alert("STOP CHEAT!!!")
+      window.location.reload()
+    } else if (punteggioVerde == 10) {
+      alert("YOU WIN!!!!")
+      window.location.reload()
+    } else if (punteggioRosso == 5){
+      alert("YOU LOST!!!!");
+      window.location.reload()
+
+
+    }
   })
 
 

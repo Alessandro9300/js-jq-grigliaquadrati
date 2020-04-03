@@ -10,7 +10,7 @@ body{
 }
 
 
-.container{
+.cont-cub{
   max-width: 800px;
   height: 800px;
   margin: auto;
@@ -75,4 +75,20 @@ h1 span{
 
 .color-green{
   background: green;
+}
+
+.regole{
+  width: 600px;
+  text-align: center;
+  line-height: 2;
+  color: white;
+  position: fixed;
+  top: 30%;
+  left: 150px;
+  font-weight: 600;
+  font-size: 34px;
+}
+
+.regole h2{
+  color: black;
 }
