@@ -1,0 +1,38 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
+.container{
+  max-width: 1200px;
+  height: 1200px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+.quadrato{
+  border: solid 1px;
+  flex-basis: calc(100% / 8);
+  overflow: hidden;
+  transition: all .1s linear;
+  background: green;
+}
+
+.quadrato:hover{
+  transform: scale(1.05);
+  border: solid 3px;
+  background: white;
+  cursor: pointer;
+}
+
+.color-red{
+  background: red;
+}
+
+.color-green{
+  background: green;
+}
