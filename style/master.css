@@ -4,33 +4,73 @@
   box-sizing: border-box;
 }
 
+body{
+  font-family: arial;
+  background: grey;
+}
+
 
 .container{
-  max-width: 1200px;
-  height: 1200px;
+  max-width: 800px;
+  height: 800px;
   margin: auto;
   display: flex;
   flex-wrap: wrap;
 }
 
+.stats{
+  padding-top: 50px;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  margin-bottom: 40px;
+}
+
+.punteggio{
+  display: flex;
+  width: 500px;
+  justify-content: space-around;
+  margin-top: 30px;
+  font-size: 26px;
+  font-weight: 600;
+}
+
+.pverde{
+  color: green;
+}
+.prosso{
+  color: red;
+}
+
+h1{
+  font-size: 38px;
+  color: green;
+}
+
+h1 span{
+  color: red;
+}
 
 .quadrato{
   border: solid 1px;
-  flex-basis: calc(100% / 8);
+  flex-basis: calc((100% / 8) - 20px);
+  margin: 10px;
   overflow: hidden;
   transition: all .1s linear;
-  background: green;
+  background: white;
+
+
 }
 
 .quadrato:hover{
-  transform: scale(1.05);
-  border: solid 3px;
-  background: white;
+  transform: scale(1.1);
   cursor: pointer;
 }
 
 .color-red{
-  background: red;
+  background: white;
 }
 
 .color-green{

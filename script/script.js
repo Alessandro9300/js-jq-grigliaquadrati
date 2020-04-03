@@ -6,7 +6,7 @@ $(document).ready(function(){
   var myArray = [];
 
    for (var i = 0; i < 15; i++) {
-     numeroRandom = Math.floor(Math.random() * (63 - 1 + 1) + 1);
+     numeroRandom = Math.floor(Math.random() * (64) + 1);
 
      if (myArray.indexOf(numeroRandom) == -1){
        myArray.push(numeroRandom)
@@ -24,8 +24,7 @@ $(document).ready(function(){
   }
 
     while (myArray.length > 0){
-     console.log("il mio array è " + myArray);
-    ;
+
     var spliced = myArray.splice(0,1);
     var numSplice = spliced[0];
 
@@ -34,6 +33,12 @@ $(document).ready(function(){
 
     }
 
+    $(".quadrato").click(function(){
+      $(this).css("background", "green")
+      if ($(this).hasClass("color-red")){
+        $(this).css("background","red")
+      }
+    })
 
 
 
